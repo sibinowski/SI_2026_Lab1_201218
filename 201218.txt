@@ -1,0 +1,63 @@
+Чекор 13
+
+Користени команди:
+git checkout master
+git merge feature-search-books
+git log --oneline --graph --all
+
+Тип на merge:
+Fast-forward
+
+Објаснување:
+Ова спојување беше fast-forward бидејќи на master гранката немаше направено нови commit-и откако беше креирана гранката feature-search-books. Поради тоа, Git можеше директно да ја „помести“ master гранката напред без да прави нов merge commit.
+
+Излез од git log:
+* d554d40 (HEAD -> master, origin/feature-search-books, feature-search-books) Implement book search
+* 5baccfc (origin/master) Add starter code
+* d002cbc Initial commit
+
+
+Чекор 22
+
+Користени команди:
+git checkout feature-borrow-book
+git merge master
+git status
+
+Дали настана конфликт:
+Да, настана конфликт во датотеката SI2026Lab1Main.java.
+
+Како е решен:
+Конфликтот го решив рачно. Ги избришав конфликт маркерите (<<<<<<<, =======, >>>>>>>) и ја оставив верзијата каде што пораката е "Borrowed successfully.".
+
+Merge стратегија:
+Recursive (ort)
+
+Излез од git status:
+nothing to commit, working tree clean
+
+
+Чекор 23
+
+Користени команди:
+git checkout master
+git merge feature-genre-report
+
+Тип на merge:
+Recursive (ort)
+
+Објаснување:
+Ова спојување не беше fast-forward затоа што во меѓувреме на master гранката беше направен нов commit (Update borrow message on master). Поради тоа Git мораше да направи merge commit.
+
+
+Чекор 24
+
+Користени команди:
+git checkout master
+git merge feature-borrow-book
+
+Тип на merge:
+Recursive (ort)
+
+Објаснување:
+Ова спојување исто така не беше fast-forward бидејќи гранката feature-borrow-book веќе имаше своја историја (вклучуваше merge од master). При спојувањето се појави конфликт во SI2026Lab1Main.java, кој го решив рачно.
